@@ -1,0 +1,11 @@
+--- build.xml	2022-04-17 19:11:36.496233879 +0100
++++ build2.xml	2022-04-17 19:10:46.032158712 +0100
+@@ -106,7 +106,7 @@
+             </then>
+         </if>
+ 
+-        <exec command="curl -sS https://getcomposer.org/installer | php -- --install-dir=${project_path}/deploy/composer/ --filename=composer.deploy.phar" level="info" outputProperty="install.error.msg" returnProperty="install.error.code"/>
++        <exec command="curl -sS https://getcomposer.org/installer | php -- --install-dir=${project_path}/deploy/composer/ --filename=composer.deploy.phar --version=1.9.1" level="info" outputProperty="install.error.msg" returnProperty="install.error.code"/>
+         <exec command="${project_path}/deploy/composer/composer.deploy.phar self-update 1.9.0" level="info" />
+         <exec command="chmod +x ${project_path}/storage/tvarchive.sh" level="info"/>
+         <exec command="rm -f ${project_path}/deploy/ministra/composer.lock" level="info"/>
